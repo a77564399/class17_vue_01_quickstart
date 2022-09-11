@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
 
 	<head>
 		<meta charset="utf-8" />
@@ -9,12 +9,21 @@
 
 	<body>
 		<div id="app">
-			
+			用户名：<input type="text" v-model="user.username">
+			密码：<input type="text" v-model="user.password">
 		</div>
 	</body>
 	<script>
 		//view model
-		
+		new Vue({
+			el:"#app",
+			data:{
+				user:{
+					username:"test",
+					password:"123"
+				}
+			}
+		})
 	</script>
 
 </html>

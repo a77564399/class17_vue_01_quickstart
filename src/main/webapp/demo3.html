@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
 
 	<head>
 		<meta charset="utf-8" />
@@ -9,13 +9,40 @@
 
 	<body>
 		<div id="app">
-			<input type="text" v-on:keydown="fun($event)">
+			Vue:<input type="text" v-on:keydown="fun($event)">
+			<hr>
+			JS:<input type="text" onkeydown="fun1()">
 		</div>
 	</body>
 	<script>
+<!--		Vue方式-->
+		new Vue({
+			el:"#app",
+			methods:{
+				fun: function (event)
+				{
+					var keyCode = event.keyCode;
+					//注意，小键盘按钮是96-105
+					if(!((keyCode>=48&&keyCode<=57)||(keyCode>=96&&keyCode<=105)))
+					{
+						event.preventDefault();
+					}
+				}
+			}
+		})
+
+
+		//传统js方式
 		//view model
+		function fun1(){
+			var keyCode = event.keyCode;
+			//注意，小键盘按钮是96-105
+			if(!((keyCode>=48&&keyCode<=57)||(keyCode>=96&&keyCode<=105)))
+			{
+				event.preventDefault();
+			}
+			// alert(keyCode)
+		}
 	</script>
-	
-	
 
 </html>

@@ -7,11 +7,27 @@
 	</head>
 	<body>
 		<div id="app">
-			
+			<h1>{{message}}</h1>
+			{{false? "OK":"No"}}
+
+<!--			数学运算-->
+			{{number*3.14}}
+<!--			插值表达式不支持变量声明和代码块，只有取数据的相关信息-->
+
+
 		</div>
 	</body>
 	<script>
 		//view model
-		
+	//	创建Vue对象
+		new Vue({
+			el:"#app",//由Vue接管id为app的区域
+			data:{
+				message:"Hello",
+				number:100
+			}
+		})
+
+
 	</script>
 </html>

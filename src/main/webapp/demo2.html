@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="utf-8" />
 		<title>v-on:click</title>
@@ -8,11 +8,21 @@
 	<body>
 		<div id="app">
 			{{message}}  
-			<button>vue的onclick</button>
+			<button v-on:click="fun1('good')">vue的onclick</button>
 		</div>
 	</body>
 	<script>
 		//view model
-		
+		new Vue({
+			el:"#app",
+			data:{
+				message:"message"
+			},
+			methods:{
+				fun1:function (msg){
+					this.message = msg
+				}
+			}
+		});
 	</script>
 </html> 

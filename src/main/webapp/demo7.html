@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="utf-8" />
 		<title>v-text与v-html</title>
@@ -7,11 +7,21 @@
 	</head>
 	<body>
 		<div id="app">
-			<div></div>
-			<div></div>
+			<font v-bind:color="ys1">hello</font>
+			<font v-bind:color="ys2">green</font>
 		</div>
 	</body>
 	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				message:"<h1>Hello</h1>",
+				ys1:"red",
+				ys2:"green"
+			}
+		})
 		//view model
+		// document.getElementById("div1").innerText="<h1>Hello</h1>"
+		// document.getElementById("div2").innerHTML="<h1>Hello</h1>"
 	</script>
 </html>

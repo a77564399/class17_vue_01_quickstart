@@ -7,11 +7,34 @@
 	</head>
 	<body>
 		<div id="app">
-			
+			<ul>
+				<li v-for="product in products">{{product.name}}=={{product.price}}</li>
+			</ul>
+
+			<table border="1">
+				<tr>
+					<td>编号</td>
+					<td>名称</td>
+					<td>价格</td>
+				</tr>
+				<tr v-for="(product,index) in products">
+					<td>{{index}}</td>
+					<td>{{product.name}}</td>
+					<td>{{product.price}}</td>
+				</tr>
+			</table>
+
 		</div>
 	</body>
 	<script>
 		//view model
-		
+		new Vue({
+			el:"#app",
+			data:{
+				products:[
+					{name:"wahaha",price:10},{name:"wahehe",price:20}
+				]
+			}
+		})
 	</script>
 </html>

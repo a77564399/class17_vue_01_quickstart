@@ -10,12 +10,22 @@
 
 	<body>
 		<div id="app">
-		
+			<form @submit.prevent action="http://baidu.com" method="post">
+				<input type="submit" value="提交" >
+			</form>
 		</div>
 	</body>
 	<script>
-		//view model
-		
+		new Vue({
+			el:"#app"
+		})
+
+
+		// //view model
+		// function checkForm()
+		// {
+		// 	return false;
+		// }
 		
 		
 	</script>

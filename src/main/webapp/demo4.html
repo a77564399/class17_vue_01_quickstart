@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
 
 	<head>
 		<meta charset="utf-8" />
@@ -7,21 +7,51 @@
 		<style>
 			#div {
 				background-color: red;
+				width: 300px;
+				height: 300px;
 			}
 		</style>
 		<script src="js/vuejs-2.5.16.js"></script>
 	</head>
 
 	<body>
-		<div id="app">
-			<div @mouseover="fun1" id="div">
-				<textarea @mouseover="fun2($event)">这是一个文件域</textarea>
+<!--		<div id="app">-->
+<!--			<div v-on:mouseover="fun1()" id="div">-->
+<!--				<textarea v-on:mouseover="fun2($event)">这是一个文件域</textarea>-->
+<!--			</div>-->
+<!--		</div>-->
+
+			<div id="app">
+				<div @mouseover="fun1()" id="div">
+					<textarea @mouseover.stop="fun2($event)">这是一个文件域</textarea>
+				</div>
 			</div>
-		</div>
+
 	</body>
 	<script>
+		new Vue({
+			el:"#app",
+			methods:{
+				fun1: function (){
+					alert("div");
+				},
+				fun2: function (event){
+					alert("text");
+				}
+			}
+		})
+
+
 		//view model
-		
+		// function fun1(){
+		// 	alert("div");
+		// }
+		// function fun2(){
+		// 	alert("文件域");
+		// 	event.stopPropagation();
+		// }
+
+
 	</script>
 
 </html>
